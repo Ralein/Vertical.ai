@@ -70,3 +70,4 @@
 - Use light mode for better visibility
 - Show the date filter dropdown open in one screenshot
 - Hover over a chart to show tooltips in action
+![alt text](ss.png)

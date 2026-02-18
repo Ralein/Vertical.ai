@@ -18,14 +18,14 @@ export default function SalesTrendChart({ data }: SalesTrendChartProps) {
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis 
-              dataKey="date" 
+            <XAxis
+              dataKey="date"
               tick={{ fontSize: 12 }}
               tickFormatter={(value) => new Date(value).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
             />
             <YAxis tick={{ fontSize: 12 }} />
-            <Tooltip 
-              formatter={(value: number) => `$${value.toLocaleString()}`}
+            <Tooltip
+              formatter={(value: number | undefined) => `$${value?.toLocaleString() ?? 0}`}
               labelFormatter={(label) => new Date(label).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             />
             <Line type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={2} dot={{ r: 4 }} />
